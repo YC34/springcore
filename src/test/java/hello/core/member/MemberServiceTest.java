@@ -1,6 +1,7 @@
 package hello.core.member;
 
 
+import hello.core.AppConfig;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -9,10 +10,11 @@ import org.junit.jupiter.api.Test;
  */
 public class MemberServiceTest {
 
-    MemberService memberService = new MemberServiceImpl();
+    AppConfig appConfig = new AppConfig();
 
     @Test
     void save(){
+        MemberService memberService = appConfig.memberService();
         // given
         Member member = new Member(1L,"memberA",Grade.VIP);
         //when

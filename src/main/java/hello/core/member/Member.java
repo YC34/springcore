@@ -1,6 +1,6 @@
 package hello.core.member;
 
-
+import hello.core.member.Grade;
 /**
  *  회원 Entity
  *  lombok 라이브러리를 사용하지 않으므로, 생성자와 getter,setter를 생성해준다.
