@@ -25,7 +25,9 @@ inflearn 김영한 : spring 핵심 원리편
 + step 01의 문제점은 DIP를 위반 하고 있음. 인터페이스와 구현체 모두에게 의존하고 있음.
 + step 02에서도 여전히 인터페이스와 구현체 모두에게 의존하고 있음.(OCP 위반)
 + step 03 관심사 분리 : config파일 생성 -> application 전반에 대한 운영을 책임지는 파일 , 구현체는 의존관계는 신경쓰지 않고 실행에만 집중한다.
-+ 
++ step 04 AppConfig 리펙토링 : 명확성을 위함.
++ step 05 AppConfig를 통한 정책 변경. 구성영역(config)만 변경하고, 사용영역에서는 변경이 필요하지 않다.
++ step 06 spring으로 전환. spring 컨테이너의 이해 (ApplicationContext -> 등록한 bean을 관리해준다.)
 
 #### TODO
 + ~~OrderService에서 member 객체가 안넘어가는 이슈 해결해보기.~~
