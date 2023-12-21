@@ -32,5 +32,30 @@ inflearn 김영한 : spring 핵심 원리편
 #### TODO
 + ~~OrderService에서 member 객체가 안넘어가는 이슈 해결해보기.~~
 + 이슈에 대한 정답 :  member를 저장하는 저장소에 static로 저장하지 않아 접근을 하지 못함.
++ Environment에 대한 설정값 읽어오기 및 셋팅 해보기. ( 다음 프로젝트에서 설정 해 볼 에정.)
++ BeanDefinition에 대한 공부하기.
 
+### SPRING MEMO
++ spring container 
+  > ApplicationContext라는 인터페이스 우리가 사용할 구현체는 AnnotationConfigApplicationContext 
+  > 위의 구현체로 사용한 이유는 bean의 등록을 annotation을 기반으로 하였기 때문. 
+  > + 주의사항 bean의 이름은 모두 다르게 설정하여야 한다. 
+  > + bean을 등록 후 의존관계를 형성한다.
+    
+  > container에 등록된 bean을 조회하자. >> test code의 hello.core.beanfind라는 패키지 확인.
+  > BeanFactory >> ApplicationContext >>  AnnotationConfigApplicationContext 순으로 되어있다. 
+  
+  > XML 문서를 활용한 설정 정보 .(test code의 hello.core.xml)
+  
+  > BeanDefinition에 대한 테스트 코드 (test code의 hello.core.definition)
+  
+  > SingleTon (test code의 hello.core.singleton)
+  > + 웹 어플리케이션의 문제점 : 요청에 의해 new 연산자로 객체를 생성하면 모든 요청마다 객체가 생성됨.
+  > + 요청에 의해 객체가 생성되고 소멸되는 메모리 소모가 심함. 
+  > + 해결방안으로 singleton 으로 구현 (객체1개만 생성 후  공유.)
+  > + spring container는 singleton의 모든 단점을 보완하여 사용할 수 있게 해준다. 
+  > + singleton 객체를 생성하고 관리해주는 것 : 싱글톤 레지스트리
+  > + 주의점 : 무상태로 유지해야 한다.  필드가 공유되면 안된다. 
+  > + spring의 bean에 등록되어 있으면 등록되어 있는 것을 꺼내서 사용하게 해준다. 등록되어 있지 않다면, 새로 등록해준다..? 
+  > + @Configuration 어노테이션을 사용하면, 해당 클래스의 인스턴스를 CGLIB형태로 만든다ㅓ..? 어노테이션을 선언하지 않는다면, 싱글톤을 보장해주지 못한다. 
 

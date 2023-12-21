@@ -28,6 +28,7 @@ public class AppConfig { //step 03
 
     @Bean   // step 06
     public MemberService memberService(){
+        System.out.println("call AppConfig.memberService");
         return new MemberServiceImpl(memberRepository()); //step 03
     }
 
@@ -36,6 +37,7 @@ public class AppConfig { //step 03
     // 구현 객체는 MemoryMemberRepository
     @Bean
     public MemberRepository memberRepository() {
+        System.out.println("call AppConfig.memberRepository");
         return new MemoryMemberRepository();
     } // step 04
 
@@ -46,6 +48,7 @@ public class AppConfig { //step 03
     // memberRepository와 discountPolicy를 사용할래.
     @Bean
     public OrderService orderService(){
+        System.out.println("call AppConfig.orderService");
         return new OrderServiceImpl(memberRepository(),discountPolicy());
     }
 

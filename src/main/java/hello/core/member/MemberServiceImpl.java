@@ -23,5 +23,8 @@ public class MemberServiceImpl implements MemberService{ //step 01
     }
 
 
-
+    // 테스트용
+    public MemberRepository getMemberRepository() {
+        return memberRepository;
+    }
 }
