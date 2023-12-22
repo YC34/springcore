@@ -1,7 +1,6 @@
 package hello.core;
 
 import hello.core.discount.DiscountPolicy;
-import hello.core.discount.FixdiscountPolicy;
 import hello.core.discount.RateDiscountPolicy;
 import hello.core.member.MemberRepository;
 import hello.core.member.MemberService;
@@ -48,7 +47,7 @@ public class AppConfig { //step 03
     // memberRepository와 discountPolicy를 사용할래.
     @Bean
     public OrderService orderService(){
-        System.out.println("call AppConfig.orderService");
+        System.out.println("AppConfig.orderService");
         return new OrderServiceImpl(memberRepository(),discountPolicy());
     }
 

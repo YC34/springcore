@@ -45,11 +45,11 @@ inflearn 김영한 : spring 핵심 원리편
   > container에 등록된 bean을 조회하자. >> test code의 hello.core.beanfind라는 패키지 확인.
   > BeanFactory >> ApplicationContext >>  AnnotationConfigApplicationContext 순으로 되어있다. 
   
-  > XML 문서를 활용한 설정 정보 .(test code의 hello.core.xml)
++ XML 문서를 활용한 설정 정보 .(test code의 hello.core.xml)
   
-  > BeanDefinition에 대한 테스트 코드 (test code의 hello.core.definition)
++ BeanDefinition에 대한 테스트 코드 (test code의 hello.core.definition)
   
-  > SingleTon (test code의 hello.core.singleton)
++ SingleTon (test code의 hello.core.singleton)
   > + 웹 어플리케이션의 문제점 : 요청에 의해 new 연산자로 객체를 생성하면 모든 요청마다 객체가 생성됨.
   > + 요청에 의해 객체가 생성되고 소멸되는 메모리 소모가 심함. 
   > + 해결방안으로 singleton 으로 구현 (객체1개만 생성 후  공유.)
@@ -59,3 +59,7 @@ inflearn 김영한 : spring 핵심 원리편
   > + spring의 bean에 등록되어 있으면 등록되어 있는 것을 꺼내서 사용하게 해준다. 등록되어 있지 않다면, 새로 등록해준다..? 
   > + @Configuration 어노테이션을 사용하면, 해당 클래스의 인스턴스를 CGLIB형태로 만든다ㅓ..? 어노테이션을 선언하지 않는다면, 싱글톤을 보장해주지 못한다. 
 
++ @ComponentScan
+  > @Component 어노테이션이 들어있는 클래스를 찾아 bean으로 자동 등록 해준다. 
+  > bean의 이름은 해당 클래스의 클래스명이 bean 이름이 된다.(맨 앞글자만 소문자로 변경됨.) @Component에 따로 이름을 지정할 수 있다. 
+  > 
