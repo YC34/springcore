@@ -1,2 +1,7 @@
-test:
-  key : test
+#test:
+#  key : test
+
+# 수동 등록된 bean이 우선권을 가지면서 overriding가 될 수 있도록 해주는 설정 (기본값은 false)
+spring:
+  main:
+    allow-bean-definition-overriding: true

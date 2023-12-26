@@ -57,9 +57,13 @@ inflearn 김영한 : spring 핵심 원리편
   > + singleton 객체를 생성하고 관리해주는 것 : 싱글톤 레지스트리
   > + 주의점 : 무상태로 유지해야 한다.  필드가 공유되면 안된다. 
   > + spring의 bean에 등록되어 있으면 등록되어 있는 것을 꺼내서 사용하게 해준다. 등록되어 있지 않다면, 새로 등록해준다..? 
-  > + @Configuration 어노테이션을 사용하면, 해당 클래스의 인스턴스를 CGLIB형태로 만든다ㅓ..? 어노테이션을 선언하지 않는다면, 싱글톤을 보장해주지 못한다. 
+  > + @Configuration 어노테이션을 사용하면, 해당 클래스의 인스턴스를 CGLIB 형태로 만든다ㅓ..? 어노테이션을 선언하지 않는다면, 싱글톤을 보장해주지 못한다. 
 
 + @ComponentScan
-  > @Component 어노테이션이 들어있는 클래스를 찾아 bean으로 자동 등록 해준다. 
-  > bean의 이름은 해당 클래스의 클래스명이 bean 이름이 된다.(맨 앞글자만 소문자로 변경됨.) @Component에 따로 이름을 지정할 수 있다. 
-  > 
+  > @Component 어노테이션이 들어있는 클래스를 찾아 bean 으로 자동 등록 해준다. 
+  > bean의 이름은 해당 클래스의 클래스명이 bean 이름이 된다.(맨 앞글자만 소문자로 변경됨.) @Component 에 따로 이름을 지정할 수 있다. 
+
++ 중복 등록과 충돌
+  > 자동등록 vs 자동등록 : @Component 어노테이션이 선언되어있는 이름이 같은 이름일 경우, ConflictingBeanDefinitionException 이 발생
+  > 수동등록 vs 자동등록 : 수동 등록 bean 이 우선권을 가진다. main 클래스를 바로 실행한다면, 오류가 난다. 
+  > 위의 문제점을 해결 하기 위해서는, overriding 설정을 application.properties 혹은 application.yml에 지정해준다.
