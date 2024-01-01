@@ -17,7 +17,16 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
+	// web 추가
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	// start .lomkok 추가
+	implementation 'org.projectlombok:lombok:1.18.28'
+
+	// end .
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+
 }
 
 tasks.named('test') {

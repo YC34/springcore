@@ -17,7 +17,8 @@ inflearn 김영한 : spring 핵심 원리편
 + dependency : boot-starter, boot-starter-test
 
 ### 메모
-
++ 2024.01.01
+  > component scan까지 공부함. 필요하면 뒤의 강의 참고해서 들을 예정.
 
 + 도메인 협력 관계(유스케이스?) -> 클래스 다이어그램 -> 객체 다이어그램 
     > 클래스 다이어 그램은 실제로 구현한 모습이 아닌, 전체적인 클래스 다이어그램.
@@ -61,9 +62,15 @@ inflearn 김영한 : spring 핵심 원리편
 
 + @ComponentScan
   > @Component 어노테이션이 들어있는 클래스를 찾아 bean 으로 자동 등록 해준다. 
-  > bean의 이름은 해당 클래스의 클래스명이 bean 이름이 된다.(맨 앞글자만 소문자로 변경됨.) @Component 에 따로 이름을 지정할 수 있다. 
+  > bean의 이름은 해당 클래스의 클래스명이 bean 이름이 된다.(맨 앞글자만 소문자로 변경됨.) @Component 에 따로 이름을 지정할 수 있다.
+  > 
 
 + 중복 등록과 충돌
   > 자동등록 vs 자동등록 : @Component 어노테이션이 선언되어있는 이름이 같은 이름일 경우, ConflictingBeanDefinitionException 이 발생
   > 수동등록 vs 자동등록 : 수동 등록 bean 이 우선권을 가진다. main 클래스를 바로 실행한다면, 오류가 난다. 
   > 위의 문제점을 해결 하기 위해서는, overriding 설정을 application.properties 혹은 application.yml에 지정해준다.
+  
++ LomBok 라이브러리를 통한 생성자 주입.
+  > final로 선언된 필드들을 모아 생성자를 자동으로 만들어준다. 
+  > @Getter,@Setter등 여러가지 기능을 제공.
+  
